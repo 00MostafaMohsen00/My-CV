@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ asset("font-awesome/css/font-awesome.css") }}">
 </head>
 <body>
-    
+
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -31,8 +31,11 @@
         <li class="nav-item">
             <a class="nav-link" href="{{ route('get.summary') }}">Summary</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="{{ route('home') }}"><i class="fa fa-eye" aria-hidden="true">View CV</i></a>
+        </li>
       </ul>
-      
+
     </div>
   </nav>
   <div class="container">
