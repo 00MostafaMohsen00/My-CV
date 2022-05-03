@@ -18,32 +18,32 @@ use App\Http\Middleware\adminMiddleware;
 
 
 
-Route::group(["prefix"=>"admin/controll/secure"],function () {
-    Route::get('/login', [adminController::class,'login'])->name("admin.login");
-    Route::post("/check",[adminController::class,"check"])->name("admin.save.login");
-    Route::group(["prefix"=>"/dashboard","middleware"=>["adminauth:admin","web"]],function (){
-        Route::get("/index",[adminController::class,'index'])->name("dashboard");
-        Route::get("/summary",[adminController::class,'getSummary'])->name("get.summary");
-        Route::post("/edit-summary",[adminController::class,'editSummary'])->name("edit.summary");
-        Route::post("/edit-personal",[adminController::class,"editPersonal"])->name("personal.save");
-        Route::get("/skills",[adminController::class,"allSkills"])->name("skills.all");
-        Route::get("/create-skill",[adminController::class,"createSkill"])->name("skill.create");
-        Route::post("/save-skill",[adminController::class,"saveSkill"])->name("skill.save");
-        Route::get("/update-skill/{id}",[adminController::class,"updateSkill"])->name("skill.update");
-        Route::post("/edit-skill/{id}",[adminController::class,"editSkill"])->name("skill.edit");
-        Route::post("/delete-skill",[adminController::class,"deleteSkill"])->name("skill.delete");
-        Route::get("/languages",[adminController::class,"allLanguages"])->name("languages.all");
-        Route::get("/create-language",[adminController::class,"createLanguage"])->name("language.create");
-        Route::post("/save-language",[adminController::class,"saveLanguage"])->name("language.save");
-        Route::get("/update-language/{id}",[adminController::class,"updateLanguage"])->name("language.update");
-        Route::post("/edit-language/{id}",[adminController::class,"editLanguage"])->name("language.edit");
-        Route::post("/delete-language",[adminController::class,"deleteLanguage"])->name("language.delete");
-        Route::get("/contacts",[adminController::class,"allContacts"])->name("contacts.all");
-        Route::get("/create-contact",[adminController::class,"createContact"])->name("contact.create");
-        Route::post("/save-contact",[adminController::class,"saveContact"])->name("contact.save");
-        Route::get("/update-contact/{id}",[adminController::class,"updateContact"])->name("contact.update");
-        Route::post("/edit-contact/{id}",[adminController::class,"editcontact"])->name("contact.edit");
-        Route::post("/delete-contact",[adminController::class,"deleteContact"])->name("contact.delete");
+Route::group(["prefix"=>"admin prefix"],function () {
+    Route::get('/login page', [adminController::class,'login'])->name("admin.login");
+    Route::post("/login validation route",[adminController::class,"check"])->name("admin.save.login");
+    Route::group(["prefix"=>"your home page dashboard","middleware"=>["adminauth:admin","web"]],function (){
+        Route::get("/dashboard page",[adminController::class,'index'])->name("dashboard");
+        Route::get("/summary route",[adminController::class,'getSummary'])->name("get.summary");
+        Route::post("/summary editting page",[adminController::class,'editSummary'])->name("edit.summary");
+        Route::post("/summary editting route",[adminController::class,"editPersonal"])->name("personal.save");
+        Route::get("/all skills page",[adminController::class,"allSkills"])->name("skills.all");
+        Route::get("/skill creation page",[adminController::class,"createSkill"])->name("skill.create");
+        Route::post("/skill data saving route",[adminController::class,"saveSkill"])->name("skill.save");
+        Route::get("/skill upated with id page",[adminController::class,"updateSkill"])->name("skill.update");
+        Route::post("/skill update with id route",[adminController::class,"editSkill"])->name("skill.edit");
+        Route::post("/skill deletion route",[adminController::class,"deleteSkill"])->name("skill.delete");
+        Route::get("/all languages page",[adminController::class,"allLanguages"])->name("languages.all");
+        Route::get("/language creation page",[adminController::class,"createLanguage"])->name("language.create");
+        Route::post("/language data saveing route",[adminController::class,"saveLanguage"])->name("language.save");
+        Route::get("/language update by id page",[adminController::class,"updateLanguage"])->name("language.update");
+        Route::post("/language update by id route",[adminController::class,"editLanguage"])->name("language.edit");
+        Route::post("/language deletion route",[adminController::class,"deleteLanguage"])->name("language.delete");
+        Route::get("/all contacts page",[adminController::class,"allContacts"])->name("contacts.all");
+        Route::get("/contacts creation page",[adminController::class,"createContact"])->name("contact.create");
+        Route::post("/contacts data saveing route",[adminController::class,"saveContact"])->name("contact.save");
+        Route::get("/contact update by id page",[adminController::class,"updateContact"])->name("contact.update");
+        Route::post("/contact update by id route",[adminController::class,"editcontact"])->name("contact.edit");
+        Route::post("/contact deletion route",[adminController::class,"deleteContact"])->name("contact.delete");
     });
 
 });
