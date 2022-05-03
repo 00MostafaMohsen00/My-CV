@@ -7,7 +7,7 @@ Contacts
 @section("content")
 
 <form  id="edit_form" method="POST" enctype="multipart/form-data">
-    @csrf 
+    @csrf
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text" class="form-control" id="name" value="{{ $contact->name }}" name="name" aria-describedby="emailHelp" placeholder="Enter Language Name">
@@ -47,7 +47,7 @@ Contacts
             cache: false,
             success: function (data) {
                 if(data.status == true){
-                    $('#success_msg').text("Created Successfully...");
+                    $('#success_msg').text("Updated Successfully...");
                     $('#success_msg').show();
                 }
             }, error: function (reject) {
