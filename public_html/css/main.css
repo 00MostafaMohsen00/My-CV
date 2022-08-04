@@ -1,0 +1,57 @@
+img{
+    width:100px;
+    margin-left:200px;
+    margin-top: 10px;
+    border-radius: 150px 140px; 
+    padding-left:0px;
+}
+
+
+.container{
+    padding-top: 10px;
+    background-color: #eee;
+    color:black;
+    margin-top:40px;
+}
+
+
+
+.card{
+    background-color: white;
+}
+
+
+.contact .summary .personal .skills .languages{
+    background-color: white;
+}
+
+
+
+legend{
+    color: black;
+}
+
+a{
+    color:gray;
+}
+
+body{
+    background-color:#eee;
+}
+
+
+html,body,.container {
+    height:100%;
+}
+
+
+.row {
+    height: 100%;
+    display: table-row;
+}
+
+body{
+    height:100px;
+}
+
+

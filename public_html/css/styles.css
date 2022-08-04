@@ -1,0 +1,12 @@
+*{
+    box-sizing: border-box;
+}
+ .parent{
+    margin-top:200px;
+    margin-left:450px;
+ }
+
+ body{
+     background-color: lightblue;
+ }
+
