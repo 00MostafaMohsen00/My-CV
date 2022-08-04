@@ -47,6 +47,7 @@ Contacts
             cache: false,
             success: function (data) {
                 if(data.status == true){
+                    $('input').val(null);
                     $('#success_msg').text("Created Successfully...");
                     $('#success_msg').show();
                 }
