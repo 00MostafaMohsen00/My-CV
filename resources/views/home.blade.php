@@ -66,14 +66,32 @@
                                 </fieldset>
                             </div>
                             <div class="col-6 col-md-4 col-sm-4 col-lg-6 w-25 languages" >
-                                <fieldset>
-                                    <legend >Languages</legend>
-                                    <ul>
-                                        @foreach ($user->languages as $languages )
-                                        <li>{{ $languages->name }} : {{ $languages->description }}</li>
-                                        @endforeach
-                                    </ul>
-                                </fieldset>
+                                <div class="row g-0">
+                                    <div class="col" >
+                                        <fieldset>
+                                            <legend >Languages</legend>
+                                            <ul>
+                                                @foreach ($user->languages as $languages )
+                                                    <li>{{ $languages->name }} : {{ $languages->description }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </fieldset>
+                                    </div>
+                                    <div class="row g-0">
+                                        <div class="col" >
+                                        <fieldset >
+                                            <legend >Projects</legend>
+                                            <ul>
+                                            @foreach ($projects as $project )
+                                            <li><a href="{{ $project->url }}" target="__blank"> {{  $project->title }} <br>({{$project->tools}})</a></li>
+                                            @endforeach
+                                            </ul>
+                                        </fieldset>
+                                        </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="row g-0">
