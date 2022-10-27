@@ -13,6 +13,7 @@ use App\Models\Summary;
 use App\Models\Skill;
 use App\Models\Language;
 use App\Models\Contact;
+use App\Models\Project;
 use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Support\Facades\Crypt;
 
@@ -283,6 +284,69 @@ class adminController extends Controller
 
     }
 
+
+ public function allProjects(){
+        
+       $projects=Project::all();
+        return view("admin.projects",compact("projects"));
+    }
+
+    public function createProject (){
+        return view("admin.createProject");
+    }
+
+
+    public function saveProject(Request $request){
+        $this->validate($request,[
+            "title"=>"required|string|min:5",
+            "url"=>"required|string|min:2",
+            "tools" =>"required|string|min:10"
+        ]);
+        $project=Project::create([
+            "title"=>$request->title,
+            "url"=>$request->url,
+            "tools"=>$request->tools,
+        ]);
+        return response()->json([
+            "status" =>true,
+        ]);
+    }
+
+    public function updateProject($id){
+        $project=Project::findOrFail($id);
+        return view("admin.update-project",compact("project"));
+    }
+
+    public function editProject(Request $request,$id){
+       $this->validate($request,[
+            "title"=>"required|string|min:5",
+            "url"=>"required|string|min:2",
+            "tools" =>"required|string|min:10"
+        ]);
+        $project=Project::findOrFail($id);
+        $project->title=$request->title;
+            $project->url=$request->url;
+            $project->tools=$request->tools;
+            $project->save();
+        return response()->json([
+            "status" =>true,
+        ]);
+    }
+
+    public function deleteProject(Request $request){
+         $project=Project::findOrFail($request->id);
+
+        if(!$project){
+            return response()->json([
+                "status"=>false,
+            ]);
+        }
+        $project->delete();
+        return response()->json([
+            "status"=>true,
+        ]);
+
+}
 
 
 
