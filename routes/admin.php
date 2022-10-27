@@ -44,6 +44,12 @@ Route::group(["prefix"=>"/"],function () {
         Route::get("/",[adminController::class,"updateContact"])->name("contact.update");
         Route::post("/",[adminController::class,"editcontact"])->name("contact.edit");
         Route::post("/",[adminController::class,"deleteContact"])->name("contact.delete");
+         Route::get("/",[adminController::class,"allProjects"])->name("projects.all");
+        Route::get("/",[adminController::class,"createProject"])->name("project.create");
+        Route::post("/",[adminController::class,"saveProject"])->name("project.save");
+        Route::get("/",[adminController::class,"updateProject"])->name("project.update");
+        Route::post("/",[adminController::class,"editProject"])->name("project.edit");
+        Route::post("/",[adminController::class,"deleteProject"])->name("project.delete");
     });
 
 });
