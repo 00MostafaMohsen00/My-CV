@@ -33,6 +33,9 @@
           <a class="nav-link" href="{{ route('get.summary') }}">Summary</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="{{ route('projects.all') }}">Projects</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" target="_blank" href="{{ route('home') }}"><i class="fa fa-eye" aria-hidden="true">View CV</i></a>
         </li>
       </ul>
